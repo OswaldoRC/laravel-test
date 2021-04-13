@@ -1,0 +1,92 @@
+{
+  "books": [
+    {
+      
+      "name": "Eloquent JavaScript, Second Edition",
+      
+      "author": "Marijn Haverbeke",
+      "publication_date": "2014-12-14 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    },
+    {
+      
+      "name": "Learning JavaScript Design Patterns",
+      
+      "author": "Addy Osmani",
+      "publication_date": "2012-07-01 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    },
+    {
+      
+      "name": "Speaking JavaScript",
+      
+      "author": "Axel Rauschmayer",
+      "publication_date": "2014-02-01 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    },
+    {
+      
+      "name": "Programming JavaScript Applications",
+      
+      "author": "Eric Elliott",
+      "publication_date": "2014-07-01 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    },
+    {
+      
+      "name": "Understanding ECMAScript 6",
+      
+      "author": "Nicholas C. akas",
+      "publication_date": "2016-09-03 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    },
+    {
+      
+      "name": "You Don't Know JS",
+      
+      "author": "Kyle Simpson",
+      "publication_date": "2015-12-27 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    },
+    {
+      
+      "name": "Git Pocket Guide",
+      
+      "author": "Richard E. Silverman",
+      "publication_date": "2013-08-02 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    },
+    {
+      
+      "name": "Designing Evolvable Web APIs with ASP.NE ",
+      
+      "author": "Glenn Block, et al.",
+      "publication_date": "2014-04-07 00:00:00.000",
+      
+      
+      "category_id": 1
+      
+    }
+  ]
+}
