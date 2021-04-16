@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Book\BookController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,4 +18,8 @@ use App\Http\Controllers\Book\BookController;
 Route::group(['namespace' => 'Book'], function () {
     Route::get('book', [BookController::class, 'index']);
     Route::post('book', [BookController::class, 'store']);
+    Route::put('book/{id}', [BookController::class, 'update']);
+
 });
+
+Route::get('category', [CategoryController::class, 'index']);

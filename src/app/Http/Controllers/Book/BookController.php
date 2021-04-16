@@ -15,7 +15,7 @@ class BookController extends ApiController
      */
     public function index()
     {
-        $books = Book::paginate(2);
+        $books = Book::with('category')->where(['deleted' => 0])->orderBy('name')->paginate(5);
         return $this->successResponse($books);
     }
 
@@ -68,7 +68,34 @@ class BookController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            $book = Book::find($id);
+            if($book == null){
+                return $this->errorResponse("Record does not exist.", 500);
+            }
+            $rules = [
+                'name' => 'string',
+                'category_id' => 'integer',
+                'author' => 'string',
+                'publication_date' => 'date',
+                'available' => 'integer'
+            ];
+    
+            $validatedData = $request->validate($rules);
+            $data = $request->all();
+    
+            $book->fill($data);
+            $res = $book->save();
+            return $this->successResponse($book,200);
+        }
+        catch (\Illuminate\Database\QueryException $exception) {
+            $errorInfo = $exception->errorInfo;
+            return $this->errorResponse($errorInfo, 500);
+        }
+        catch (\Exception $exception) {
+            $errorInfo = $exception->errorInfo;
+            return $this->errorResponse($errorInfo, 500);
+        }
     }
 
     /**

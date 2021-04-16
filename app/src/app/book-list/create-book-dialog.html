@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>{{title}}</h1>
+<div mat-dialog-content>
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="book.name">
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" name="author" [(ngModel)]="book.author">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" aria-label="Default select example" name="category_id" [(ngModel)]="book.category_id">
+                <option selected>Open this select menu</option>
+                <option *ngFor="let item of categories" value={{item.id}}>{{item.name}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <mat-form-field appearance="fill" >
+                <mat-label>Publication date</mat-label>
+                <input matInput [matDatepicker]="picker" name="publication_date" [(ngModel)]="book.publication_date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+      </form>
+</div>
+<div mat-dialog-actions class="my-3">
+  <button mat-button class="btn btn-default text-light" (click)="onNoClick()">Cancel</button>
+  <button mat-button class="btn btn-primary" [mat-dialog-close]="book" cdkFocusInitial>Save</button>
+</div>
